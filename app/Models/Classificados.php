@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Classificados extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'items' => 'array',
+        'date' => 'datetime'
+    ];
 }
