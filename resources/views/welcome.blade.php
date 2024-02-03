@@ -74,20 +74,22 @@
         </div>
 
         <div class="row">
+            @foreach($classificados as $classificado)
             <div class="col-md-3 mb-4">
                 <div class="card" style="">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <span>Imóvel</span>
+                            <span>{{$donosClassificados}}</span>
                         </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            <span>Aluga-se imóvel no residêncial garcia no valor de R$ 1.500,00/mês</span>
+                            <span>{{$classificado->texto_classificado}}</span>
                         </h6>
                         <a href="index.php"
                             class="card-link">Ver</a>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
 
 

@@ -13,4 +13,16 @@ class Classificados extends Model
         'items' => 'array',
         'date' => 'datetime'
     ];
+
+    protected $dates = ['date'];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function users(){
+        return $this->belongsToMany('App\Models\User');
+    }
+
+    protected $guarded = [];
 }
