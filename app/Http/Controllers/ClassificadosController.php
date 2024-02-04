@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Classificados;
+use App\Models\Categoria;
 use App\Models\Empresas;
 use App\Models\User;
 
@@ -21,10 +22,17 @@ class ClassificadosController extends Controller
         /*Busca Empresas*/
         $empresas = Empresas::all();
 
+        $categoriaEmpresa = [];
+        foreach ($empresas as $empresa) {
+            $categoria = Categoria::where('id', $empresa->categoria_empresa)->first();
+            $categoriaEmpresa[$empresa->categoria_empresa] = $categoria->toArray();
+        }
+
         return view('welcome',[
                     'classificados' => $classificados, 
                     'donoClassificado' => $donoClassificado, 
-                    'empresas' => $empresas
+                    'empresas' => $empresas,
+                    'categoriaEmpresa'=>$categoriaEmpresa
                 ]);
     }
 

@@ -104,6 +104,7 @@
                 <div class="alert alert-danger"><li class="fa-solid fa-warning"></li> Nenhum empresa cadastrado no momento</div>
             @else
                 @foreach($empresas as $empresa)
+                @if($empresa->visivel == 1)
                 <div class="col-md-4 col-sm-6">
                     <div class="friend-card card">
                         <img src="img/conteudo/background_profile.jpg" alt="profile-cover" class="img-responsive cover">
@@ -117,12 +118,13 @@
                                         {{$empresa->nome_empresa}}
                                     </a></h5>
                                 <p class="categoria-empresa">
-                                    Serviços
+                                    {{$categoriaEmpresa[$empresa->categoria_empresa]['nome_categoria']}}
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
             @endif            
             </div>
