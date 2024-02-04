@@ -13,12 +13,23 @@ class ClassificadosController extends Controller
 {
     public function index(){
         /*Busca Classificados*/
-        $classificados = Classificados::all();
-        $donoClassificado = [];
-        foreach ($classificados as $classificado) {
-            $dono = User::where('id', $classificado->id_usuario)->first();
-            $donoClassificado[$classificado->id] = $dono->toArray();
+        $classificados = Classificados::orderBy('id', 'desc')->take(4)->get();
+
+        // Verifica se existem resultados
+        if ($classificados->isNotEmpty()) {
+            // Obtém o primeiro resultado da coleção
+            $primeiroClassificado = $classificados->first();        
+            // Obtém o dono do classificado
+            $donoClassificado = User::find($primeiroClassificado->id_usuario)->toArray();
+        } else {
+            // Caso não haja resultados
+            $donoClassificado = null;
         }
+        
+        // foreach ($classificados as $classificado) {
+        //     $dono = User::where('id', $classificado->id_usuario)->first();
+        //     $donoClassificado[$classificado->id] = $dono->toArray();
+        // }
 
         /*Busca Empresas*/
         $empresas = Empresas::all();
