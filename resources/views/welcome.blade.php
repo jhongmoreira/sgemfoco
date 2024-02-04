@@ -46,21 +46,6 @@
 
 <section class="container-fluid mt-4">
 
-    <!-- <div class="row">
-        <div class="col-md-12 text-center">
-          <h3 class="p-0 m-0">Pesquise por uma empresa</h3>
-        </div>
-      </div>
-
-      <div class="row justify-content-center mb-5 mt-3">
-        <div class="col-md-8">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Digite a empresa ou categoria" aria-label="Search">
-            <button class="btn btn-sm btn-primary" type="submit">Pesquisar</button>
-          </form>
-        </div>
-      </div> -->
-
     <div class="container">
 
         <div class="row mb-2">
@@ -74,27 +59,32 @@
         </div>
 
         <div class="row">
-            @foreach($classificados as $classificado)
-            @if($classificado->post_aprovado == 1)
-            <div class="col-md-3 mb-4">
-                <div class="card" style="">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <span>{{$classificado->tipo_classificado}}</span>
-                        </h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            <span>{{$classificado->texto_classificado}}</span>
-                            <div class="mt-2">                                
-                                <small><i class="fa-solid fa-user"></i> {{$donoClassificado[$classificado->id]['name']}}</small>
+            @if(count($classificados) == 0)
+                <div class="alert alert-danger"><li class="fa-solid fa-warning"></li> Nenhum classificado cadastrado no momento</div>
+            @else
+                @foreach($classificados as $classificado)
+                    @if($classificado->post_aprovado == 1)
+                    <div class="col-md-3 mb-4">
+                        <div class="card" style="">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <span>{{$classificado->tipo_classificado}}</span>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <span>{{$classificado->texto_classificado}}</span>
+                                    <div class="mt-2">                                
+                                        <small><i class="fa-solid fa-user"></i> {{$donoClassificado[$classificado->id]['name']}}</small>
+                                    </div>
+                                </h6>
+                                <a href="index.php"
+                                    class="card-link">Ver</a>
                             </div>
-                        </h6>
-                        <a href="index.php"
-                            class="card-link">Ver</a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    @endif
+                @endforeach
             @endif
-            @endforeach
+            
         </div>
 
 
