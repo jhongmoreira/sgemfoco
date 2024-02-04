@@ -76,7 +76,7 @@
                                         <small><i class="fa-solid fa-user"></i> {{$donoClassificado[$classificado->id]['name']}}</small>
                                     </div>
                                 </h6>
-                                <a href="index.php"
+                                <a href="#"
                                     class="card-link">Ver</a>
                             </div>
                         </div>
@@ -100,17 +100,21 @@
 
         <div class="friend-list">
             <div class="row">
+            @if(count($empresas) == 0)
+                <div class="alert alert-danger"><li class="fa-solid fa-warning"></li> Nenhum empresa cadastrado no momento</div>
+            @else
+                @foreach($empresas as $empresa)
                 <div class="col-md-4 col-sm-6">
                     <div class="friend-card card">
                         <img src="img/conteudo/background_profile.jpg" alt="profile-cover" class="img-responsive cover">
                         <div class="card-info">
-                            <img src="img/conteudo/logo_eficaz.png" alt="user"
+                            <img src="img/empresa_placeholder.png" alt="user"
                                 class="profile-photo-lg">
                             <div class="friend-info">
-                                <p class="float-end text-green">São Gotardo</p>
+                                <p class="float-end text-green">{{$empresa->cidade_empresa}}</p>
                                 <h5><a href="index.php"
                                         class="profile-link">
-                                       Efiz Desentupidora
+                                        {{$empresa->nome_empresa}}
                                     </a></h5>
                                 <p class="categoria-empresa">
                                     Serviços
@@ -119,6 +123,8 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+            @endif            
             </div>
         </div>
 
