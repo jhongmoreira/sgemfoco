@@ -17,11 +17,7 @@ class Classificados extends Model
     protected $dates = ['date'];
 
     public function user(){
-        return $this->belongsTobelongsToMany('App\Models\User');
-    }
-
-    public function users(){
-        return $this->belongsToMany('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
     
     protected $guarded = [];

@@ -59,8 +59,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function users(){
-        return $this->belongsToMany('App\Models\User');
+    public function classificados(){
+        return $this->hasMany('App\Models\Classificados');
     }
 
 }

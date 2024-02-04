@@ -52,10 +52,10 @@ class ClassificadosController extends Controller
 
     public function show($id){
         /*Busca Classificados*/
-        $classificado = Classificados::findOrFail($id)->first();
-        $donoClassificado = User::where('id', $classificado->id_usuario)->first()->toArray();
+        $classificadoShow = Classificados::findOrFail($id);
+        $donoClassificado = User::where('id', $classificadoShow->id_usuario)->first()->toArray();
 
-        return view('classificados.show', ['classificado'=>$classificado, 'donoClassificado'=>$donoClassificado]);
+        return view('classificados.show', ['classificadoShow'=>$classificadoShow, 'donoClassificado'=>$donoClassificado]);
     }
 
 }
