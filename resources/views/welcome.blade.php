@@ -73,11 +73,10 @@
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     <span>{{$classificado->texto_classificado}}</span>
                                     <div class="mt-2">                                
-                                        <small><i class="fa-solid fa-user"></i> {{$donoClassificado[$classificado->id]['name']}}</small>
+                                        <small><i class="fa-solid fa-user"></i> {{$donoClassificado[$classificado->id_usuario]['name']}}</small>
                                     </div>
                                 </h6>
-                                <a href="#"
-                                    class="card-link">Ver</a>
+                                <a href="/classificados/{{$classificado->id}}" class="card-link">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -160,17 +159,21 @@
         </div>
 
         <div class="row">
+            @if(count($vagas) == 0)
+                <div class="alert alert-danger"><li class="fa-solid fa-warning"></li> Nenhum vaga de emprego no momento.</div>
+            @else
+            @foreach($vagas as $vaga)
             <div class="col-md-3 mb-4">
                 <div class="card" style="height: 7.5em;">
                     <div class="card-body">
                         <h5 class="card-title">
-                            Designer Gráfico
+                            {{$vaga->nome_vaga}}
                         </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            Atual Agência 
+                            {{$nomeEmpresa[$empresaId->id]['nome_empresa']}} 
                         </h6>
                         <p class="card-text">
-                            <span class="categoria badge bg-sucess ?>">
+                            <span class="categoria badge text-sucess">
                                 Disponível
                             </span>
                         </p>
@@ -178,6 +181,8 @@
                     </div>
                 </div>
             </div>
+            @endforeach
+            @endif
         </div>
 
         <div class="row">

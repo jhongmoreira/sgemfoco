@@ -15,6 +15,8 @@ use App\Http\Controllers\ClassificadosController;
 */
 
 Route::get('/', [ClassificadosController::class, 'index'])->name('home');
+Route::get('/classificados/{id}', [ClassificadosController::class, 'show'])->name('classificados');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
