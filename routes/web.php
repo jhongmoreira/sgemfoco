@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EventController;
+use App\Http\Controllers\ClassificadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@ use App\Http\Controllers\EventController;
 |
 */
 
-Route::get('/', [EventController::class, 'index'])->name('home');
+Route::get('/', [ClassificadosController::class, 'index'])->name('home');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

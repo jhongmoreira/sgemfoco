@@ -75,20 +75,25 @@
 
         <div class="row">
             @foreach($classificados as $classificado)
+            @if($classificado->post_aprovado == 1)
             <div class="col-md-3 mb-4">
                 <div class="card" style="">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <span>{{$donosClassificados}}</span>
+                            <span>{{$classificado->tipo_classificado}}</span>
                         </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
                             <span>{{$classificado->texto_classificado}}</span>
+                            <div class="mt-2">                                
+                                <small><i class="fa-solid fa-user"></i> {{$donoClassificado[$classificado->id]['name']}}</small>
+                            </div>
                         </h6>
                         <a href="index.php"
                             class="card-link">Ver</a>
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
 
