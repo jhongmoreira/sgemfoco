@@ -31,6 +31,14 @@
                     <h6 class="mb-0"> E-mail</h6>
                     <span class="text-secondary">{{$donoClassificado['email']}}</span>
                   </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"> Telefone</h6>
+                    <span class="text-secondary">{{$donoClassificado['phone']}}</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"> Telefone</h6>
+                    <span class="text-secondary">{{$donoClassificado['whatsapp']}}</span>
+                  </li>
                 </ul>
               </div>
             </div>

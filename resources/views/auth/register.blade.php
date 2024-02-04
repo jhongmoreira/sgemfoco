@@ -29,6 +29,16 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <div class="mt-4">
+                <x-label for="phone" value="{{ __('Phone') }}" />
+                <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" required/>
+            </div>
+
+            <div class="mt-4">
+                <x-label for="whatsapp" value="{{ __('Whatsapp') }}" />
+                <x-input id="whatsapp" class="block mt-1 w-full" type="text" name="whatsapp" required/>
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">
