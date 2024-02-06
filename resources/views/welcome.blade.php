@@ -73,7 +73,7 @@
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     <span>{{$classificado->texto_classificado}}</span>
                                     <div class="mt-2">                                
-                                        <small><i class="fa-solid fa-user"></i> {{$donoClassificado['name']}}</small>
+                                        <small><i class="fa-solid fa-user"></i> {{ $classificado->user->name }}</small>
                                     </div>
                                 </h6>
                                 <a href="/classificados/{{$classificado->id}}" class="card-link">Ver</a>

@@ -15,21 +15,11 @@ class ClassificadosController extends Controller
         /*Busca Classificados*/
         $classificados = Classificados::orderBy('id', 'desc')->take(4)->get();
 
-        // Verifica se existem resultados
-        if ($classificados->isNotEmpty()) {
-            // Obtém o primeiro resultado da coleção
-            $primeiroClassificado = $classificados->first();        
-            // Obtém o dono do classificado
-            $donoClassificado = User::find($primeiroClassificado->id_usuario)->toArray();
-        } else {
-            // Caso não haja resultados
-            $donoClassificado = null;
+        foreach ($classificados as $classificado){
+            $usuario = User::find($classificado->id_usuario);
         }
-        
-        // foreach ($classificados as $classificado) {
-        //     $dono = User::where('id', $classificado->id_usuario)->first();
-        //     $donoClassificado[$classificado->id] = $dono->toArray();
-        // }
+
+       
 
         /*Busca Empresas*/
         $empresas = Empresas::all();
@@ -52,7 +42,6 @@ class ClassificadosController extends Controller
 
         return view('welcome',[
                     'classificados' => $classificados, 
-                    'donoClassificado' => $donoClassificado, 
                     'empresas' => $empresas,
                     'categoriaEmpresa'=>$categoriaEmpresa,
                     'vagas' => $vagas,

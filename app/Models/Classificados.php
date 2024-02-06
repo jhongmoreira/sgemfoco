@@ -15,10 +15,13 @@ class Classificados extends Model
     ];
 
     protected $dates = ['date'];
-
-    public function user(){
-        return $this->belongsTo('App\Models\User');
-    }
     
     protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_usuario');
+    }
+
+
 }
