@@ -37,14 +37,20 @@
                                 <a class="nav-link" href="index.php?pg=3">WebTV</a>
                             </li>
                         </ul>
-                        <!-- <form class="d-flex" role="search">
-                        <input class="form-control me-2 bg-dark text-white" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-warning" type="submit">Pesquisas</button>
-                    </form> -->
+                        <div class="d-flex">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('anuncio') }}">Anunciar</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
         </header>
+        @if(session('msg'))
+            <p class="msg alert alert-info">{{session('msg')}}</p>
+        @endif
 
       @yield('content')
       

@@ -16,13 +16,5 @@ use App\Http\Controllers\ClassificadosController;
 
 Route::get('/', [ClassificadosController::class, 'index'])->name('home');
 Route::get('/classificados/{id}', [ClassificadosController::class, 'show'])->name('classificados');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::get('/anuncio', [ClassificadosController::class, 'create'])->name('anuncio')->middleware('auth');
+Route::post('/anunciar',[ClassificadosController::class, 'store'])->name('anunciar');
