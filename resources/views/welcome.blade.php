@@ -108,7 +108,7 @@
                     <div class="friend-card card">
                         <img src="img/conteudo/background_profile.jpg" alt="profile-cover" class="img-responsive cover">
                         <div class="card-info">
-                            <img src="img/empresa_placeholder.png" alt="user"
+                            <img src="img/empresas/{{ $empresa->logotipo_empresa }}" alt="user"
                                 class="profile-photo-lg">
                             <div class="friend-info">
                                 <p class="float-end text-green">{{$empresa->cidade_empresa}}</p>

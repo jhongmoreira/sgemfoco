@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Classificados;
 use App\Models\Categoria;
-use App\Models\Empresas;
+use App\Models\Empresa;
 use App\Models\Vagas;
 use App\Models\User;
 
@@ -22,7 +22,7 @@ class ClassificadosController extends Controller
        
 
         /*Busca Empresas*/
-        $empresas = Empresas::all();
+        $empresas = Empresa::all();
 
         $categoriaEmpresa = [];
         foreach ($empresas as $empresa) {
