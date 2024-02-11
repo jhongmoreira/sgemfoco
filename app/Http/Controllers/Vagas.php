@@ -28,4 +28,11 @@ class Vagas extends Controller
 
         return redirect("/")->with("msg", "Vaga cadastrada com sucesso!");
     }
+
+    public function show($id){
+        $vaga = Vaga::find($id);
+        $empresa = Empresa::find($vaga->cod_empresa);
+
+        return view("vagas.show", ['vaga' => $vaga, 'empresa'=>$empresa]);
+    }
 }

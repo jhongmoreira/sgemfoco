@@ -177,7 +177,7 @@
                                 Disponível
                             </span>
                         </p>
-                        <a href="index.php" class="card-link">Ver Vaga</a>
+                        <a href="/vaga/{{ $vaga->id }}" class="card-link">Ver Vaga</a>
                     </div>
                 </div>
             </div>

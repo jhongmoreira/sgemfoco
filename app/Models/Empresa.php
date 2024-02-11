@@ -10,5 +10,6 @@ class Empresa extends Model
     use HasFactory;
 
     protected $guarded = [];
-    
+
+   
 }
