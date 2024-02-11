@@ -43,6 +43,9 @@
                                     <a class="nav-link" href="{{ route('anuncio') }}">Anunciar</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('nova-vaga') }}">Nova Vaga</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('nova-empresa') }}">Nova Empresa</a>
                                 </li>
                             </ul>

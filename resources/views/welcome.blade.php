@@ -170,7 +170,7 @@
                             {{$vaga->nome_vaga}}
                         </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            {{$nomeEmpresa[$empresaId->id]['nome_empresa']}} 
+                            {{ $vaga->empresa->nome_empresa }}
                         </h6>
                         <p class="card-text">
                             <span class="categoria badge text-sucess">

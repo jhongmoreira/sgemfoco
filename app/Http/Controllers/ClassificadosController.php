@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Classificados;
 use App\Models\Categoria;
 use App\Models\Empresa;
-use App\Models\Vagas;
+use App\Models\Vaga;
 use App\Models\User;
 
 class ClassificadosController extends Controller
@@ -31,22 +31,28 @@ class ClassificadosController extends Controller
         }
 
         /*Busca Vagas*/
-        $vagas = Vagas::where('aberto',1)->get();
+        $vagas = Vaga::all();
         $nomeEmpresa = [];
         $empresaId = [];
 
-        foreach ($vagas as $vaga) {
-            $empresaId = Empresas::where('id', $vaga->cod_empresa)->first();
-            $nomeEmpresa[$vaga->cod_empresa] = $empresaId->toArray();
+        // $nomeEmpresa = [];
+        // foreach ($vagas as $vaga) {
+        //     $empresaId = Empresa::where('id', $vaga->cod_empresa)->first();
+        //     $nomeEmpresa[$vaga->cod_empresa] = $empresaId->toArray();
+        // }
+        foreach ($vagas as $vaga){
+            $empresa = Empresa::find($vaga->cod_empresa);
         }
+
 
         return view('welcome',[
                     'classificados' => $classificados, 
                     'empresas' => $empresas,
                     'categoriaEmpresa'=>$categoriaEmpresa,
                     'vagas' => $vagas,
-                    'empresaId' => $empresaId,
-                    'nomeEmpresa' => $nomeEmpresa
+                    'empresa' => $empresa
+                    // 'empresaId' => $empresaId,
+                    // 'nomeEmpresa' => $nomeEmpresa
                 ]);
     }
 
