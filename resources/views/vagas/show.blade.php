@@ -98,10 +98,10 @@
                         </span>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item"><small><i class="fa-solid fa-hashtag"></i> {{ $vaga->id }} </small></li>
-                      <li class="list-group-item"><small><i class="fa-solid fa-calendar"></i>  ### </small></li>
-                      <li class="list-group-item"><small><i class="fa-solid fa-briefcase"></i> {{" R$ ".$vaga->salario }}</small></li>
+                      <li class="list-group-item"><small><i class="fa-solid fa-calendar"></i>  {{ "até ".date('d/m/Y', strtotime($vaga->data_exp)) }} </small></li>
+                      <li class="list-group-item"><small><i class="fa-solid fa-briefcase"></i> {{ $vaga->nome_vaga }} </small></li>
                       <li class="list-group-item"><small><i class="fa fa-solid fa-graduation-cap"></i> {{ $vaga->escolaridade }}</small></li>
-                      <li class="list-group-item"><small><i class="fa fa-solid fa-money-bill"></i> ###</small></li>
+                      <li class="list-group-item"><small><i class="fa fa-solid fa-money-bill"></i> {{" R$ ".number_format($vaga->salario, 2, ',', ' ') }}</small></li>
                     </ul>
                     <div>
                         <h6 class="d-flex align-items-center mt-2"><i class="material-icons text-info mr-2">Como se candidatar?</i></h4>

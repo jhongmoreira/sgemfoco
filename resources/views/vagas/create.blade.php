@@ -28,15 +28,20 @@
             </div>
           
             <div class="form-group mt-2">
+              <label for="data_exp">Validade</label>
+              <input type="date" name="data_exp" id="data_exp" class="form-control">
+            </div>
+          
+            <div class="form-group mt-2">
               <label for="escolaridade">Escolaridade:</label>
               <select name="escolaridade" id="escolaridade" class="form-control">
-                  <option value="nenhuma">Nenhuma exigência</option>
-                  <option value="fundamental">Fundamental</option>
-                  <option value="medio">Médio</option>
-                  <option value="superior">Superior</option>
-                  <option value="posgraduado">Pós-graduado</option>
-                  <option value="mestrado">Mestrado</option>
-                  <option value="doutorado">Doutorado</option>
+                  <option value="Nenhuma">Nenhuma exigência</option>
+                  <option value="Fundamental">Fundamental</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Superior">Superior</option>
+                  <option value="Pós-graduado">Pós-graduado</option>
+                  <option value="Mestrado">Mestrado</option>
+                  <option value="Doutorado">Doutorado</option>
               </select>
             </div>
 

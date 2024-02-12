@@ -11,5 +11,9 @@ class Empresa extends Model
 
     protected $guarded = [];
 
+    public function vagas(){
+        return $this->hasMany(Vaga::class, 'id');
+    }
+
    
 }

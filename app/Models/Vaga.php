@@ -9,6 +9,10 @@ class Vaga extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'data_exp' => 'datetime'
+    ];
+
     public function empresa(){
         return $this->belongsTo(Empresa::class, 'cod_empresa');
     }

@@ -173,11 +173,11 @@
                             {{ $vaga->empresa->nome_empresa }}
                         </h6>
                         <p class="card-text">
-                            <span class="categoria badge text-sucess">
+                            <span class="categoria badge text-sucess bg-success">
                                 Disponível
                             </span>
                         </p>
-                        <a href="/vaga/{{ $vaga->id }}" class="card-link">Ver Vaga</a>
+                        <a href="/detalhe/{{ $vaga->id }}" class="card-link">Ver Vaga</a>
                     </div>
                 </div>
             </div>

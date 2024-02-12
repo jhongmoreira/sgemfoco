@@ -22,6 +22,7 @@ class Vagas extends Controller
         $vaga->salario = $request->salario;
         $vaga->escolaridade = $request->escolaridade;
         $vaga->descricao = $request->descricao;
+        $vaga->data_exp = date('Y-m-d', strtotime($request->data_exp));
         $vaga->aberto = 1;
 
         $vaga->save();
