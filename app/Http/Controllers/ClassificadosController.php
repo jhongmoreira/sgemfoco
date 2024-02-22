@@ -64,6 +64,14 @@ class ClassificadosController extends Controller
         return view('classificados.show', ['classificadoShow'=>$classificadoShow, 'donoClassificado'=>$donoClassificado]);
     }
 
+    public function all(){
+        /*Busca Classificados*/
+        $classificadoShow = Classificados::all();
+        $donoClassificado = User::where('id', $classificadoShow->id_usuario)->first()->toArray();
+
+        return view('classificados.show', ['classificadoShow'=>$classificadoShow, 'donoClassificado'=>$donoClassificado]);
+    }
+
     public function create(){
         return view('classificados.create');
     }

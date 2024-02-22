@@ -86,6 +86,14 @@
             
         </div>
 
+        <div class="row">
+            <div class="col-md-12 mt-3 mb-5 d-flex justify-content-left">
+                <a href="{{ route('lista-classificados' }}" class="btn btn-sm btn-primary">
+                    Todos os Classificados
+                </a>
+            </div>
+        </div>
+
 
         <div class="row mb-2">
             <div class="col-md-12 titulos-home-border-left">

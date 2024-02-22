@@ -8,6 +8,7 @@ use App\Http\Controllers\Vagas;
 
 Route::get('/', [ClassificadosController::class, 'index'])->name('home');
 Route::get('/classificados/{id}', [ClassificadosController::class, 'show'])->name('classificados');
+Route::get('/classificados', [ClassificadosController::class, 'show'])->name('lista-classificados');
 Route::get('/detalhe/{id}', [Vagas::class, 'show'])->name('vaga');
 Route::get('/anuncio', [ClassificadosController::class, 'create'])->name('anuncio')->middleware('auth');
 Route::post('/anunciar',[ClassificadosController::class, 'store'])->name('anunciar');
